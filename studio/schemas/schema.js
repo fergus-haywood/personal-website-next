@@ -10,6 +10,8 @@ import category from './category'
 import project from './project'
 import navigation from './documents/navigation'
 import siteConfig from './siteConfig'
+import Clients from './documents/Clients'
+import About from './documents/About'
 
 //Object Types
 import navItem from './objects/navItem'
@@ -25,6 +27,8 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     navigation,
+    Clients,
+    About,
     siteConfig,
     navItem,
     link,
