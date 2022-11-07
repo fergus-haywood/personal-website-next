@@ -19,6 +19,19 @@ export default {
       title: 'Link',
     },
     {
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'disciplines',
+      type: 'string',
+      title: 'Disciplines',
+    },
+    {
       name: 'id',
       type: 'string',
       title: 'Id',
