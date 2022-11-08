@@ -12,10 +12,13 @@ import navigation from './documents/navigation'
 import siteConfig from './siteConfig'
 import Clients from './documents/Clients'
 import About from './documents/About'
+import Projects from './documents/Projects'
 
 //Object Types
 import navItem from './objects/navItem'
 import link from './objects/link'
+import projectImages from './objects/projectImages'
+import projectDisciplines from './objects/projectDisciplines'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,7 +35,9 @@ export default createSchema({
     siteConfig,
     navItem,
     link,
-    project,
+    Projects,
+    projectImages,
+    projectDisciplines,
     category,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

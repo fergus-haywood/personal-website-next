@@ -32,6 +32,11 @@ export default {
       title: 'Disciplines',
     },
     {
+      name: 'backgroundColor',
+      type: 'string',
+      title: 'Background Color',
+    },
+    {
       name: 'id',
       type: 'string',
       title: 'Id',
