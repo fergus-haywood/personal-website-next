@@ -9,6 +9,11 @@ export default {
       title: 'Client',
     },
     {
+      name: 'origin',
+      type: 'string',
+      title: 'Origin',
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
