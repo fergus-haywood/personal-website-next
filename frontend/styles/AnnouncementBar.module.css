@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  width: 350px;
+  height: 32px;
+  grid-column: 2 / span 2;
+}
+.surround {
+  border: 1px solid var(--color);
+  border-radius: 40px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  white-space: nowrap;
+}
+/* Marquee */
+
+.inner {
+
+  margin: 0;
+
+/* Starting position */
+-moz-transform:translateX(150%);
+-webkit-transform:translateX(150%);    
+transform:translateX(150%);
+/* Apply animation to this element */  
+-moz-animation: announcement-bar 5s linear infinite;
+-webkit-animation: announcement-bar 5s linear infinite;
+animation: announcement-bar 5s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes announcement-bar {
+0%   { -moz-transform: translateX(100%); }
+100% { -moz-transform: translateX(-150%); }
+}
+@-webkit-keyframes announcement-bar {
+0%   { -webkit-transform: translateX(100%); }
+100% { -webkit-transform: translateX(-150%); }
+}
+@keyframes announcement-bar {
+0%   { 
+-moz-transform: translateX(100%); /* Firefox bug fix */
+-webkit-transform: translateX(100%); /* Firefox bug fix */
+transform: translateX(100%);       
+}
+100%    { 
+-moz-transform: translateX(-150%); /* Firefox bug fix */
+-webkit-transform: translateX(-150%); /* Firefox bug fix */
+transform: translateX(-150%); 
+}
+}
