@@ -19,6 +19,11 @@ export default {
       type: 'blockContent',
     },
     {
+      name: 'extraCredits',
+      title: 'Extra Credits',
+      type: 'blockContent',
+    },
+    {
       name: 'link',
       type: 'link',
       title: 'Link',
