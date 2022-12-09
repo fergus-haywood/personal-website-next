@@ -1,0 +1,19 @@
+.wrapper { 
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);  
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  align-items: flex-start;
+  padding-inline: 30px;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color);
+
+}
+
+.title { 
+  font-size: 18px;
+}

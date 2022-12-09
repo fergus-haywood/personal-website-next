@@ -1,0 +1,58 @@
+.projectList { 
+  grid-column: 1 / span 2;
+  position: fixed;
+}
+
+.projectContent { 
+  grid-column: 3 / span 3;
+  margin-right: 30px;
+}
+
+.projectContentInner { 
+  position: sticky;
+  top: 180px;  
+  width: 100%;
+}
+
+.subNavItem { 
+  cursor: pointer;
+}
+
+  .clientOrigin { 
+    vertical-align: super;
+    font-size: 70%;
+  }
+  .projectDisciplines { 
+    margin-top: 16px;
+  }
+  .projectDisciplineItem {
+    font-size: 16px;
+    display: inline-block;
+    border: 1.5px solid black;
+    padding: 2px 8px 2px 8px;
+    border-radius: 25px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+
+  .projectImages { 
+    grid-column: 6 / span 4; 
+    margin-bottom: 60px;
+  }
+
+.projectImage { 
+  width: 100%;
+  border: 1px solid var(--color);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+
+.projectArrow { 
+  margin-left: 2px;
+}
+  
+
+.extraCredit { 
+  margin-top: 20px;
+}

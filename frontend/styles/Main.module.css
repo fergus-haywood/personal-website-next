@@ -1,0 +1,13 @@
+.wrapper { 
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  margin-top: 180px;
+  padding-inline: 30px;
+}
+
+.mainContent { 
+  grid-column: 2 / span 9;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+}
