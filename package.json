@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@sanity/cli": "^3.0.6"
+  }
+}
