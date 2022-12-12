@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "personal-project"
+    "name": "personal-project",
+    "basePath": "/studio"
   },
   "api": {
     "projectId": "36om7i3d",
