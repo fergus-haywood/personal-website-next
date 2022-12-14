@@ -49,3 +49,10 @@
 .creamMode { 
   background-color: var(--cream-background);
 }
+
+@media all and (max-width: 768px ) { 
+  .wrapper { 
+    position: relative;
+    padding-inline: 15px;
+  }
+}

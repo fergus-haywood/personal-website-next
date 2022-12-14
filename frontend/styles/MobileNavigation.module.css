@@ -1,0 +1,26 @@
+.menuButton { 
+  grid-column: 5;
+  text-align: right;
+  display: none;
+}
+
+.wrapper { 
+  margin-top: 30px;
+  display: grid;
+  grid-column: 1 / span 5;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.mainNavItemList { 
+
+}
+
+.socialNavItemList { 
+  grid-column: 4 / span 1;
+}
+
+@media all and (max-width: 768px ) { 
+  .menuButton { 
+    display: block;
+  }
+}

@@ -9,7 +9,7 @@ export default function Home(props) {
   return (
     <>
       <Head />
-      <Header />
+      <Header props={props} />
       <Main props={props} />
       <Footer />
     </>

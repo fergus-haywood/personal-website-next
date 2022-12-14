@@ -17,3 +17,15 @@
 .title { 
   font-size: 18px;
 }
+
+@media all and (max-width: 768px ) { 
+  .wrapper { 
+    padding-inline: 15px;
+    padding-top: 10px;
+
+  }
+
+  .title { 
+    grid-column: 1 / span 2;
+  }
+}
