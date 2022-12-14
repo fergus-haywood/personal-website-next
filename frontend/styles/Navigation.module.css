@@ -37,3 +37,9 @@ height: auto;
 .mainNavItem:hover + .submenu {
   opacity: 1; 
 }
+
+@media all and (max-width: 768px ) { 
+  .wrapper { 
+    display: none;
+  }
+}

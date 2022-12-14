@@ -11,3 +11,24 @@
   display: grid;
   grid-template-columns: repeat(9, 1fr);
 }
+
+
+@media all and (max-width: 768px ) { 
+  .wrapper { 
+    margin-top: 100px;
+    height: 100vh;
+    padding-inline: 15px;
+    height: 100vh;
+  }
+
+  .mainContent { 
+    grid-column: 5 / span 8;
+  }
+}
+
+@media all and (max-width: 768px ) { 
+  .wrapper { 
+    display: block;
+  }
+
+}
