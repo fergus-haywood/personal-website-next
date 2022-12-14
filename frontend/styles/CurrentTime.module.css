@@ -5,3 +5,9 @@ grid-column: 4 / span 2;
 .time { 
   text-transform: uppercase;
 }
+
+@media all and (max-width: 750px ) { 
+  .wrapper { 
+    display: none;
+  }
+}
