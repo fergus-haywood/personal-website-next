@@ -1,11 +1,15 @@
-import Navbar from './navbar'
+import Head from 'next/head'
+import Header from './header'
 import Footer from './footer'
+import Navigation from './Navigation'
 
-export default function Layout({ children }) {
+export default function Layout({ ...props }) {
   return (
     <>
-      <Navbar />
-      <main>{children}</main>
+      <Head />
+      <Header />
+      <Navigation content={props} />
+      <main>{props.children}</main>
       <Footer />
     </>
   )
