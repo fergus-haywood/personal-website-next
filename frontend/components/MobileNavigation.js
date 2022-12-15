@@ -2,8 +2,8 @@ import styles from '../styles/MobileNavigation.module.css'
 import { useState } from 'react'
 
 export default function Navigation(props) {
-  const mainNav = props.props.navigation.mainNav
-  const socialNav = props.props.navigation.socialNav
+  // const mainNav = props.props.navigation.mainNav
+  // const socialNav = props.props.navigation.socialNav
 
   const [menuStatus, setMenuStatus] = useState('Menu')
   const [isActive, setActive] = useState(false)
@@ -17,7 +17,7 @@ export default function Navigation(props) {
       <p onClick={() => handleClick()} className={styles.menuButton}>
         {menuStatus}
       </p>
-      <nav className={`mobileNavWrapper ${isActive ? 'is-active' : ''}`}>
+      {/* <nav className={`mobileNavWrapper ${isActive ? 'is-active' : ''}`}>
         <ul className={styles.mainNavItemList}>
           {mainNav.map((item, i) => {
             return (
@@ -43,7 +43,7 @@ export default function Navigation(props) {
             )
           })}
         </ul>
-      </nav>
+      </nav> */}
     </>
   )
 }

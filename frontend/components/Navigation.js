@@ -1,13 +1,12 @@
 import styles from '../styles/Navigation.module.css'
-
-export default function Navigation(props) {
-  const mainNav = props.navigation.mainNav
-  const socialNav = props.navigation.socialNav
-
+import Link from 'next/link'
+export default function Navigation({ content }) {
   function handleClick(e) {
-    props.content(e.target.id)
     document.body.removeAttribute('style')
   }
+
+  const mainNav = content.navigation.result[0][0].navItems
+  const socialNav = content.navigation.result[0][1].navItems
 
   return (
     <>

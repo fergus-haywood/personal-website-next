@@ -1,6 +1,6 @@
 
 .aboutContent { 
-  grid-column: 2 / span 3;
+  grid-column: 3 / span 3;
 }
 
 @media all and (max-width: 750px ) { 

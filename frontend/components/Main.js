@@ -11,11 +11,8 @@ export default function Main(props) {
   const [content, setContent] = useState('About')
   const [projects, setProject] = useState()
 
-  useEffect(() => {}, [content])
-
   return (
     <div className={styles.wrapper}>
-      <Navigation content={setContent} navigation={props.props.navigation} />
       <div className={styles.mainContent}>
         {
           {
