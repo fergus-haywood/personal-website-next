@@ -7,6 +7,7 @@ import Layout from '../components/Layout'
 import About from '../components/About'
 
 export default function Home(props) {
+  console.log(props)
   return (
     <Layout navigation={props.navigationBody}>
       <About content={props.aboutBody} />
