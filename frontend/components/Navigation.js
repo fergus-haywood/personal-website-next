@@ -4,7 +4,6 @@ export default function Navigation({ content }) {
   function handleClick(e) {
     document.body.removeAttribute('style')
   }
-
   const mainNav = content.navigation.result[0][0].navItems
   const socialNav = content.navigation.result[0][1].navItems
 
@@ -20,7 +19,7 @@ export default function Navigation({ content }) {
                 className="navItem"
                 onClick={(e) => handleClick(e)}
               >
-                {item.text}
+                <Link href={`/${item.navItemUrl.linkUrl}`}>{item.text}</Link>
               </li>
             )
           })}
