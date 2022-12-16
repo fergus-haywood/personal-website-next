@@ -1,10 +1,12 @@
 .projectList { 
   grid-column: 2 / span 2;
-  position: fixed;
+  position: sticky;
+  top: 180px;
+  height: 20%;
 }
 
 .projectContent { 
-  grid-column: 3 / span 3;
+  grid-column: 4 / span 3;
   margin-right: 30px;
 }
 
@@ -36,7 +38,7 @@
   }
 
   .projectImages { 
-    grid-column: 6 / span 4; 
+    grid-column: 7 / span 4; 
     margin-bottom: 60px;
   }
 

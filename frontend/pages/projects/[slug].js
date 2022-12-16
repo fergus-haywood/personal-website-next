@@ -1,11 +1,14 @@
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
+import ProjectList from '../../components/ProjectList'
 import styles from '../../styles/Projects.module.css'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from '@sanity/block-content-to-react'
 
 export default function Project(props) {
   const projectContent = props.project.result[0][0]
+  const projectList = props.projects.result[0]
+  console.log(projectList)
 
   function urlFor(source) {
     return imgBuilder.image(source)
@@ -17,6 +20,7 @@ export default function Project(props) {
   })
   return (
     <Layout navigation={props.navigationBody}>
+      <ProjectList projects={projectList} />
       <div className={styles.projectContent}>
         <div className={styles.projectContentInner}>
           <BlockContent blocks={projectContent.body} />
@@ -82,6 +86,10 @@ export async function getServerSideProps(pageContext) {
   const projectURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${projectQuery}]`
   const project = await fetch(projectURL).then((res) => res.json())
 
+  const projectsQuery = encodeURIComponent(`*[ _type == 'projects' ]`)
+  const projectsURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${projectsQuery}]`
+  const projects = await fetch(projectsURL).then((res) => res.json())
+
   if (!project) {
     return {
       notFound: true,
@@ -90,6 +98,7 @@ export async function getServerSideProps(pageContext) {
     return {
       props: {
         project,
+        projects,
         navigationBody,
       },
     }
