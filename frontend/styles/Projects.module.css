@@ -8,6 +8,7 @@
 .projectContent { 
   grid-column: 4 / span 3;
   margin-right: 30px;
+  max-width: 500px;
 }
 
 .projectContentInner { 

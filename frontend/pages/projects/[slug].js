@@ -46,7 +46,7 @@ export default function Project(props) {
             View Project{' '}
             <img
               className={styles.projectArrow}
-              src="./projectArrow.svg"
+              src="../projectArrow.svg"
               width="15"
             />
           </a>
