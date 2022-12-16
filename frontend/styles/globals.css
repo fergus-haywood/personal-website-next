@@ -175,6 +175,10 @@ a {
   margin: 0 0 1px 2px;
 }
 
+.contact-form__message { 
+  margin-top: 20px;
+}
+
 .mobileNavWrapper { 
   margin-top: 30px;
   display: grid;
