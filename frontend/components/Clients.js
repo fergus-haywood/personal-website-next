@@ -4,7 +4,6 @@ import imageUrlBuilder from '@sanity/image-url'
 
 export default function Clients({ clients }) {
   const [clientContent, setClientContent] = useState({})
-  const clientsItems = document.querySelectorAll('.Clients_clientItem__D8a_q')
 
   const clientList = clients.clients.result[0].sort((a, b) =>
     a.title.localeCompare(b.title)
@@ -27,13 +26,16 @@ export default function Clients({ clients }) {
     e.target.classList.add('active-client')
   }
 
-  const root = document.documentElement
-  if (clientContent) {
-    document.body.style.backgroundColor = clientContent.backgroundColor
-  } else {
-    document.body.style.backgroundColor = getComputedStyle(
-      document.body
-    ).getPropertyValue('--background-color')
+  if (typeof window !== 'undefined') {
+    const clientsItems = document.querySelectorAll('.Clients_clientItem__D8a_q')
+    const root = document.documentElement
+    if (clientContent) {
+      document.body.style.backgroundColor = clientContent.backgroundColor
+    } else {
+      document.body.style.backgroundColor = getComputedStyle(
+        document.body
+      ).getPropertyValue('--background-color')
+    }
   }
 
   return (
@@ -57,7 +59,7 @@ export default function Clients({ clients }) {
         })}
       </div>
       <div className={styles.clientContent}>
-        {clientContent.mainImage && (
+        {clientContent && (
           <img
             src={urlFor(clientContent.mainImage)}
             className={styles.clientImage}

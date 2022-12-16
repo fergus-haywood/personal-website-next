@@ -5,13 +5,11 @@ import imageUrlBuilder from '@sanity/image-url'
 
 export default function Clients(props) {
   const [clientContent, setClientContent] = useState({})
-  const clientsItems = document.querySelectorAll('.Clients_clientItem__D8a_q')
+  let clientItems = []
 
   const clientList = props.clients.result[0].sort((a, b) =>
     a.title.localeCompare(b.title)
   )
-
-  console.log(clientList)
 
   const imgBuilder = imageUrlBuilder({
     projectId: '36om7i3d',
@@ -22,21 +20,23 @@ export default function Clients(props) {
     return imgBuilder.image(source)
   }
 
+  if (typeof window !== 'undefined') {
+    clientItems = document.querySelectorAll('.Clients_clientItem__D8a_q')
+    if (clientContent) {
+      document.body.style.backgroundColor = clientContent.backgroundColor
+    } else {
+      document.body.style.backgroundColor = getComputedStyle(
+        document.body
+      ).getPropertyValue('--background-color')
+    }
+  }
+
   function handleClick(e) {
     const targetClient = e.target.id
     const content = clientList.find((content) => content.title == targetClient)
     setClientContent(content)
-    clientsItems.forEach((client) => client.classList.remove('active-client'))
+    clientItems.forEach((client) => client.classList.remove('active-client'))
     e.target.classList.add('active-client')
-  }
-
-  const root = document.documentElement
-  if (clientContent) {
-    document.body.style.backgroundColor = clientContent.backgroundColor
-  } else {
-    document.body.style.backgroundColor = getComputedStyle(
-      document.body
-    ).getPropertyValue('--background-color')
   }
 
   return (
