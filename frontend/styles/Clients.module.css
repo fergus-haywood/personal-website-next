@@ -1,8 +1,9 @@
 
 
 .clientWrapper { 
-  grid-column: 2 / span 3;
+  grid-column: 3 / span 3;
   margin-right: 20px;
+  max-width: 400px;
 }
 
 .clientItem { 
@@ -24,7 +25,7 @@
 }
 
 .clientContent { 
-  grid-column: 5 / span 4;
+  grid-column: 6 / span 4;
 }
 
 .clientImage { 

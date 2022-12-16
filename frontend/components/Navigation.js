@@ -3,6 +3,9 @@ import Link from 'next/link'
 export default function Navigation({ content }) {
   function handleClick(e) {
     document.body.removeAttribute('style')
+    document.body.style.backgroundColor = getComputedStyle(
+      document.body
+    ).getPropertyValue('--background-color')
   }
   const mainNav = content.navigation.result[0][0].navItems
   const socialNav = content.navigation.result[0][1].navItems
