@@ -1,5 +1,6 @@
 import styles from '../styles/MobileNavigation.module.css'
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function MobileNavigation({ items }) {
   const mainNav = items.result[0][0].navItems
@@ -27,7 +28,7 @@ export default function MobileNavigation({ items }) {
                 className="navItem"
                 onClick={(e) => handleClick(e)}
               >
-                {item.text}
+                <Link href={`/${item.navItemUrl.linkUrl}`}>{item.text}</Link>
               </li>
             )
           })}

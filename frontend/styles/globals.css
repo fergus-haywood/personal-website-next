@@ -208,9 +208,47 @@ a {
   .main-wrapper { 
     margin-top: 90px;
     height: calc( 100vh - 156px );
+    padding-inline: 15px;
   }
 
   .navItem { 
     padding: 3px 0;
   }
+}
+
+
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+@media all and ( min-width: 750px ) {
+  .slide-container { 
+    display: none;
+  }
+}
+
+.mobile-project-slideshow {
+  overflow: hidden;
+  grid-column: 1 / span 10; 
+  margin-top: 30px;
+  min-height: 260px;
+}
+
+.swiper-slide img { 
+  width: 100%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000 !important;
 }

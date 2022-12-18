@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
+import MobileProjectSlideshow from '../../components/MobileProjectSlideshow'
 import ProjectList from '../../components/ProjectList'
 import styles from '../../styles/Projects.module.css'
 import imageUrlBuilder from '@sanity/image-url'
@@ -17,9 +18,11 @@ export default function Project(props) {
     projectId: '36om7i3d',
     dataset: 'production',
   })
+
   return (
     <Layout navigation={props.navigationBody}>
       <ProjectList projects={projectList} />
+      <MobileProjectSlideshow project={projectContent} />
       <div className={styles.projectContent}>
         <div className={styles.projectContentInner}>
           <BlockContent blocks={projectContent.body} />
