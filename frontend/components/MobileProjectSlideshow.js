@@ -33,7 +33,7 @@ export default function MobileProjectSlideshow({ project }) {
         {slideImages.map((slide, index) => (
           <SwiperSlide>
             <img
-              src={urlFor(slide.image)}
+              src={urlFor(slide.image).width(700)}
               className={`slide-image ${styles.projectImage}`}
             />
           </SwiperSlide>
