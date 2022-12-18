@@ -8,7 +8,6 @@ import BlockContent from '@sanity/block-content-to-react'
 export default function Project(props) {
   const projectContent = props.project.result[0][0]
   const projectList = props.projects.result[0]
-  console.log(projectList)
 
   function urlFor(source) {
     return imgBuilder.image(source)

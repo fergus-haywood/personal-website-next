@@ -6,6 +6,6 @@
 
 @media all and (max-width: 750px ) { 
   .aboutContent { 
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 10;
   }
 }

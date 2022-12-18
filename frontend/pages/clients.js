@@ -61,7 +61,7 @@ export default function Clients(props) {
           })}
         </div>
         <div className={styles.clientContent}>
-          {clientContent.mainImage && (
+          {clientContent && (
             <img
               src={urlFor(clientContent.mainImage)}
               className={styles.clientImage}

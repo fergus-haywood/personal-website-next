@@ -203,3 +203,14 @@ a {
   width: 100%;
   height: auto;
 }
+
+@media all and (max-width: 750px ) { 
+  .main-wrapper { 
+    margin-top: 90px;
+    height: calc( 100vh - 156px );
+  }
+
+  .navItem { 
+    padding: 3px 0;
+  }
+}

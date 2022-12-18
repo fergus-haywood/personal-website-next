@@ -14,7 +14,7 @@ export default function Header({ props }) {
         </h1>
         <AnnouncementBar />
         <CurrentTime />
-        <MobileNavigation props={props} />
+        <MobileNavigation items={props.navigation} />
       </header>
     </>
   )
