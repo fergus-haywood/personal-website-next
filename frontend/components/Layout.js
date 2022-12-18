@@ -7,7 +7,7 @@ export default function Layout(props) {
   return (
     <>
       <Head />
-      <Header />
+      <Header props={props} />
       <Navigation content={props} />
       <main className="main-wrapper">{props.children}</main>
       <Footer />
