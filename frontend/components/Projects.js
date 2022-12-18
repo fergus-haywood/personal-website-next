@@ -9,7 +9,6 @@ export default function Projects({ projects }) {
   )
 
   const projectItems = Array.from(document.querySelectorAll('.navItem'))
-  console.log(projectItems)
 
   const [projectContent, setProjectContent] = useState()
 

@@ -2,7 +2,6 @@ import styles from '../styles/Projects.module.css'
 import Link from 'next/link'
 
 export default function ProjectList({ projects }) {
-  console.log(projects)
   const projectList = projects
   return (
     <div className={styles.projectList}>
