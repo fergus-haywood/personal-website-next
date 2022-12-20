@@ -19,8 +19,6 @@ export default function MobileProjectSlideshow({ project }) {
     dataset: 'production',
   })
 
-  console.log(slideImages[0].image)
-  // slideImages.forEach((image) => console.log(urlFor(image.image)))
   return (
     <div className="mobile-project-slideshow">
       <Swiper
