@@ -2,6 +2,7 @@
   grid-column: 2 / span 2;
   position: sticky;
   height: 20%;
+  top: 180px;
 }
 
 .projectContent { 
@@ -13,6 +14,7 @@
 .projectContentInner { 
   position: sticky;
   width: 100%;
+  top: 180px;
 }
 
 .subNavItem { 
@@ -25,7 +27,6 @@
   }
   .projectDisciplines { 
     margin-top: 16px;
-    margin-bottom: 90px;
   }
   .projectDisciplineItem {
     font-size: 16px;
@@ -62,10 +63,12 @@
 @media all and (max-width: 750px) { 
   .projectList { 
     grid-column: 1 / span 10;
+    position: relative;
+    top: 0;
   }
 .projectContent { 
   grid-column: 1 / span 10;
-  margin-top: 30px
+  margin: 30px 0px 60px 0px;
 }
 
 .projectImages { 
