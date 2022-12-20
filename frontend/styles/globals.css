@@ -207,7 +207,6 @@ a {
 @media all and (max-width: 750px ) { 
   .main-wrapper { 
     margin-top: 90px;
-    height: calc( 100vh - 156px );
     padding-inline: 15px;
   }
 
@@ -233,7 +232,7 @@ a {
 }
 
 @media all and ( min-width: 750px ) {
-  .slide-container { 
+  .mobile-project-slideshow { 
     display: none;
   }
 }

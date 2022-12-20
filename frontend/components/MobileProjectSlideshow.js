@@ -2,6 +2,7 @@ import imageUrlBuilder from '@sanity/image-url'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper'
 import styles from '../styles/Projects.module.css'
+import Image from 'next/image'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -28,13 +29,14 @@ export default function MobileProjectSlideshow({ project }) {
         slidesPerView={1}
         spaceBetween={20}
         pagination={{ clickable: true }}
-        onSlideChange={() => console.log('slide change')}
       >
         {slideImages.map((slide, index) => (
           <SwiperSlide>
             <img
-              src={urlFor(slide.image).width(700)}
+              src={urlFor(slide.image).width(700).quality(100)}
               className={`slide-image ${styles.projectImage}`}
+              // placeholder="blur"
+              // blurDataURL={slide.image.asset.metadata.lqip}
             />
           </SwiperSlide>
         ))}
