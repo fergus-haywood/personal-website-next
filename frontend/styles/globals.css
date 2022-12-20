@@ -205,6 +205,12 @@ a {
   min-height: calc( 100vh - 157px)
 }
 
+.mobile-page-title { 
+  display: none;
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+
 @media all and (max-width: 750px ) { 
   .main-wrapper { 
     margin-top: 90px;
@@ -213,6 +219,22 @@ a {
 
   .navItem { 
     padding: 3px 0;
+  }
+
+  .contactWrapper { 
+    grid-column: 1 / span 10;
+  }
+
+  .form { 
+    max-width: 100%;
+  }
+
+  .form textarea, .form input, .form-email { 
+    width: auto !important;
+  }
+
+  .mobile-page-title { 
+    display: flex;
   }
 }
 

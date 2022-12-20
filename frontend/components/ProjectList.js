@@ -5,6 +5,7 @@ export default function ProjectList({ projects }) {
   const projectList = projects
   return (
     <div className={styles.projectList}>
+      <div className="mobile-page-title">Projects</div>
       <ul>
         {projectList.map((project) => {
           return (

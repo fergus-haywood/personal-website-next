@@ -50,6 +50,7 @@ export default function Clients(props) {
     <>
       <Layout navigation={props.navigationBody}>
         <div className={styles.clientWrapper}>
+          <div className="mobile-page-title">Clients</div>
           {clientList.map((client) => {
             return (
               <>
