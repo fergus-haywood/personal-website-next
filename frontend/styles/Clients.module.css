@@ -36,3 +36,13 @@
   color: white;
   margin-top: 16px;
 }
+
+@media all and (max-width: 750px) { 
+  .clientWrapper { 
+    grid-column: 1 / span 10;
+  }
+
+  .clientContent { 
+    grid-column: 1 / span 10;
+  }
+}

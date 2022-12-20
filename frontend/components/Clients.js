@@ -58,7 +58,7 @@ export default function Clients({ clients }) {
           )
         })}
       </div>
-      <div className={styles.clientContent}>
+      {/* <div className={styles.clientContent}>
         {clientContent && (
           <img
             src={urlFor(clientContent.mainImage)}
@@ -82,7 +82,7 @@ export default function Clients({ clients }) {
             />
           </a>
         )}
-      </div>
+      </div> */}
     </>
   )
 }
