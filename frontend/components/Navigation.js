@@ -1,7 +1,7 @@
 import styles from '../styles/Navigation.module.css'
 import Link from 'next/link'
 export default function Navigation({ content }) {
-  function handleClick(e) {
+  function handleClick() {
     document.body.removeAttribute('style')
     document.body.style.backgroundColor = getComputedStyle(
       document.body
@@ -20,7 +20,7 @@ export default function Navigation({ content }) {
                 id={item.text}
                 key={item.text}
                 className="navItem"
-                onClick={(e) => handleClick(e)}
+                onClick={() => handleClick()}
               >
                 <Link href={`/${item.navItemUrl.linkUrl}`}>{item.text}</Link>
               </li>

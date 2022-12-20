@@ -50,9 +50,14 @@
   background-color: var(--cream-background);
 }
 
-@media all and (max-width: 768px ) { 
+@media all and (max-width: 750px ) { 
   .wrapper { 
     position: relative;
     padding-inline: 15px;
+    display: flex;
+  }
+
+  .themePicker { 
+    display: none;
   }
 }
