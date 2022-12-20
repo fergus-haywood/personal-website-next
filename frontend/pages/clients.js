@@ -5,11 +5,18 @@ import imageUrlBuilder from '@sanity/image-url'
 
 export default function Clients(props) {
   const [clientContent, setClientContent] = useState({})
+  const [hasImage, setHasImage] = useState(false)
   let clientItems = []
 
   const clientList = props.clients.result[0].sort((a, b) =>
     a.title.localeCompare(b.title)
   )
+
+  useEffect(() => {
+    if (clientContent.mainImage) {
+      setHasImage(true)
+    }
+  }, [clientContent])
 
   const imgBuilder = imageUrlBuilder({
     projectId: '36om7i3d',
@@ -61,7 +68,7 @@ export default function Clients(props) {
           })}
         </div>
         <div className={styles.clientContent}>
-          {clientContent && (
+          {hasImage && (
             <img
               src={urlFor(clientContent.mainImage)}
               className={styles.clientImage}
