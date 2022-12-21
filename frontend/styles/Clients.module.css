@@ -4,18 +4,27 @@
   grid-column: 3 / span 3;
   margin-right: 20px;
   max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
 }
 
+
 .clientItem { 
-  margin-right: 10px;
   margin-bottom: 2px;
   display: inline-block;
   white-space: nowrap;
   cursor: pointer;
   transition: color var(--short-transition);
 }
+.clientContainer { 
+  width: auto;
+  height: fit-content;
+  margin-right: 10px;
+}
 
-.clientItem:hover { 
+.clientContainer:hover .clientItem,
+.clientContainer:hover .clientOrigin { 
   color: var(--accent-color);
 }
 

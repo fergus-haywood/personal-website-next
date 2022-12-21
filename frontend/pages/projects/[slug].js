@@ -4,10 +4,7 @@ import ProjectList from '../../components/ProjectList'
 import styles from '../../styles/Projects.module.css'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from '@sanity/block-content-to-react'
-
 import Image from 'next/image'
-import sanityClient from '@sanity/client'
-import { useNextSanityImage } from 'next-sanity-image'
 
 export default function Project(props) {
   const projectContent = props.project.result[0][0]

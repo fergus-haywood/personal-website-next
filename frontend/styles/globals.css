@@ -67,7 +67,8 @@ a {
   box-sizing: border-box;
 }
 
-.active-client {
+.active-client,
+.active-client + span {
   color: white !important;
 }
 .active-project {
