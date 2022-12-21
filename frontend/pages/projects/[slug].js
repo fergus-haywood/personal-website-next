@@ -1,10 +1,13 @@
-import { useRouter } from 'next/router'
 import Layout from '../../components/Layout'
 import MobileProjectSlideshow from '../../components/MobileProjectSlideshow'
 import ProjectList from '../../components/ProjectList'
 import styles from '../../styles/Projects.module.css'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from '@sanity/block-content-to-react'
+
+import Image from 'next/image'
+import sanityClient from '@sanity/client'
+import { useNextSanityImage } from 'next-sanity-image'
 
 export default function Project(props) {
   const projectContent = props.project.result[0][0]
@@ -57,11 +60,16 @@ export default function Project(props) {
       <div className={styles.projectImages}>
         {projectContent.projectImages.map((image, i) => {
           return (
-            <img
-              key={i}
-              src={urlFor(image.image).width(2000)}
-              className={styles.projectImage}
-            />
+            <div className={styles.imageContainer}>
+              <Image
+                key={i}
+                src={urlFor(image.image).width(1500).quality(100).url()}
+                className={styles.projectImage}
+                layout="fill"
+                placeholder="blur"
+                blurDataURL={urlFor(image.image).width(1500).url()}
+              />
+            </div>
           )
         })}
       </div>

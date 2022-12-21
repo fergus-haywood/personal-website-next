@@ -21,27 +21,29 @@
   cursor: pointer;
 }
 
-  .clientOrigin { 
-    vertical-align: super;
-    font-size: 70%;
-  }
-  .projectDisciplines { 
-    margin-top: 16px;
-  }
-  .projectDisciplineItem {
-    font-size: 16px;
-    display: inline-block;
-    border: 1.5px solid black;
-    padding: 2px 8px 2px 8px;
-    border-radius: 25px;
-    margin-right: 6px;
-    margin-bottom: 6px;
-  }
+.clientOrigin { 
+  vertical-align: super;
+  font-size: 70%;
+}
 
-  .projectImages { 
-    grid-column: 7 / span 4; 
-    margin-bottom: 60px;
-  }
+.projectDisciplines { 
+  margin-top: 16px;
+}
+
+.projectDisciplineItem {
+  font-size: 16px;
+  display: inline-block;
+  border: 1.5px solid black;
+  padding: 2px 8px 2px 8px;
+  border-radius: 25px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+.projectImages { 
+  grid-column: 7 / span 4; 
+  margin-bottom: 60px;
+}
 
 .projectImage { 
   width: 100%;
@@ -49,6 +51,25 @@
   margin-bottom: 40px;
   position: relative;
 }
+
+.imageContainer { 
+  width: 100%
+}
+
+.imageContainer + span { 
+  position: relative !important;
+}
+
+.imageContainer div {
+    position: unset !important;
+}
+
+.projectImage {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important
+ }
 
 
 .projectArrow { 

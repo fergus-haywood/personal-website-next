@@ -1,7 +1,6 @@
 import React from 'react'
 import Navigation from './Navigation'
 import About from './About'
-import Clients from './Clients'
 import Contact from './Contact'
 import Projects from './Projects'
 import styles from '../styles/Main.module.css'
