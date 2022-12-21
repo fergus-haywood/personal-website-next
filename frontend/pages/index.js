@@ -1,15 +1,12 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Main from '../components/Main'
-import Footer from '../components/Footer'
-import styles from '../styles/Home.module.css'
 import Layout from '../components/Layout'
 import About from '../components/About'
+import HomePageImage from '../components/HomePageImage'
 
 export default function Home(props) {
   return (
     <Layout navigation={props.navigationBody}>
       <About content={props.aboutBody} />
+      <HomePageImage image={} />
     </Layout>
   )
 }
