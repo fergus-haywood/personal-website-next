@@ -17,9 +17,9 @@ export default function Header({ props }) {
     <>
       <header className={styles.wrapper}>
         <h1 className={styles.title}>
-          <a onClick={(e) => handleClick(e)}>
-            <Link href="/">Fergus Haywood</Link>
-          </a>
+          <Link href="/">
+            <a onClick={(e) => handleClick(e)}>Fergus Haywood</a>
+          </Link>
         </h1>
         <AnnouncementBar />
         <CurrentTime />
