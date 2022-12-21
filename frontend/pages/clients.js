@@ -42,11 +42,15 @@ export default function Clients(props) {
 
   function handleClick(e) {
     const targetClient = e.target.id
-    const content = clientList.find((content) => content.title == targetClient)
-    setHasContent(false)
-    setClientContent(content)
-    clientItems.forEach((client) => client.classList.remove('active-client'))
-    e.target.classList.add('active-client')
+    if (targetClient !== clientContent.title) {
+      const content = clientList.find(
+        (content) => content.title == targetClient
+      )
+      setHasContent(false)
+      setClientContent(content)
+      clientItems.forEach((client) => client.classList.remove('active-client'))
+      e.target.classList.add('active-client')
+    }
   }
 
   return (
@@ -57,18 +61,15 @@ export default function Clients(props) {
           {clientList.map((client) => {
             return (
               <>
-                <div className={styles.clientContainer}>
+                <div key={client.title} className={styles.clientContainer}>
                   <a
                     id={client.title}
-                    key={client.title}
                     className={styles.clientItem}
                     onClick={(e) => handleClick(e)}
                   >
                     {client.title}
                   </a>
-                  <span key={client.title} className={styles.clientOrigin}>
-                    ({client.origin})
-                  </span>
+                  <span className={styles.clientOrigin}>({client.origin})</span>
                 </div>
               </>
             )
