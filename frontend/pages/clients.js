@@ -5,16 +5,17 @@ import imageUrlBuilder from '@sanity/image-url'
 
 export default function Clients(props) {
   const [clientContent, setClientContent] = useState({})
-  const [hasImage, setHasImage] = useState(false)
+  const [hasContent, setHasContent] = useState(false)
   let clientItems = []
+  let clientSpans = []
 
   const clientList = props.clients.result[0].sort((a, b) =>
     a.title.localeCompare(b.title)
   )
 
   useEffect(() => {
-    if (clientContent.mainImage) {
-      setHasImage(true)
+    if (clientContent?.mainImage) {
+      setHasContent(true)
     }
   }, [clientContent])
 
@@ -29,6 +30,7 @@ export default function Clients(props) {
 
   if (typeof window !== 'undefined') {
     clientItems = document.querySelectorAll('.Clients_clientItem__D8a_q')
+    clientSpans = document.querySelectorAll('.Clients_clientOrigin__echlS')
     if (clientContent) {
       document.body.style.backgroundColor = clientContent.backgroundColor
     } else {
@@ -41,8 +43,11 @@ export default function Clients(props) {
   function handleClick(e) {
     const targetClient = e.target.id
     const content = clientList.find((content) => content.title == targetClient)
+    setHasContent(false)
     setClientContent(content)
+    console.log(e.target)
     clientItems.forEach((client) => client.classList.remove('active-client'))
+    clientSpans.forEach((client) => client.classList.remove('active-client'))
     e.target.classList.add('active-client')
   }
 
@@ -57,40 +62,41 @@ export default function Clients(props) {
                 <a
                   id={client.title}
                   key={client.title}
-                  // href={client.link.linkUrl}
                   className={styles.clientItem}
                   onClick={(e) => handleClick(e)}
                 >
                   {client.title}
-                  <span className={styles.clientOrigin}>({client.origin})</span>
+                  <span key={client.title} className={styles.clientOrigin}>
+                    ({client.origin})
+                  </span>
                 </a>
               </>
             )
           })}
         </div>
         <div className={styles.clientContent}>
-          {clientContent.mainImage && (
-            <img
-              src={urlFor(clientContent.mainImage)}
-              className={styles.clientImage}
-            />
-          )}
-          <div className={styles.clientDisciplines}>
-            {clientContent.disciplines}
-          </div>
-          {clientContent.link && (
-            <a
-              href={clientContent.link.linkUrl}
-              className="projectLink"
-              target="_blank"
-            >
-              View Client{' '}
+          {hasContent && (
+            <>
               <img
-                class={styles.projectArrow}
-                src="./projectArrow.svg"
-                width="15"
+                src={urlFor(clientContent.mainImage)}
+                className={styles.clientImage}
               />
-            </a>
+              <div className={styles.clientDisciplines}>
+                {clientContent.disciplines}
+              </div>
+              <a
+                href={clientContent.link.linkUrl}
+                className="projectLink"
+                target="_blank"
+              >
+                View Client{' '}
+                <img
+                  className={styles.projectArrow}
+                  src="./projectArrow.svg"
+                  width="15"
+                />
+              </a>
+            </>
           )}
         </div>
       </Layout>
