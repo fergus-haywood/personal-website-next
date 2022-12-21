@@ -8,5 +8,13 @@ export default {
       title: 'Body',
       type: 'blockContent',
     },
+    {
+      name: 'image',
+      title: 'Homepage Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 }

@@ -7,7 +7,7 @@ export default function CurrentTime() {
   return (
     <NoSsr>
       <div className={styles.wrapper}>
-        <h4>Tāmaki Makaurau, New Zealand</h4>
+        <h4>Tāmaki Makaurau (Auckland), New Zealand</h4>
         <Moment
           className={styles.time}
           tz="Pacific/Auckland"

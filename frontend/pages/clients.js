@@ -43,14 +43,13 @@ export default function Clients(props) {
   function handleClick(e) {
     const targetClient = e.target.id
     if (targetClient !== clientContent.title) {
-      const content = clientList.find(
-        (content) => content.title == targetClient
-      )
       setHasContent(false)
-      setClientContent(content)
       clientItems.forEach((client) => client.classList.remove('active-client'))
-      e.target.classList.add('active-client')
     }
+
+    const content = clientList.find((content) => content.title == targetClient)
+    setClientContent(content)
+    e.target.classList.add('active-client')
   }
 
   return (
