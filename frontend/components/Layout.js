@@ -6,7 +6,13 @@ import Navigation from './Navigation'
 export default function Layout(props) {
   return (
     <>
-      <Head />
+      <Head>
+        <title>Fergus Haywood</title>
+        <meta
+          name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0"
+        />
+      </Head>
       <Header props={props} />
       <Navigation content={props} />
       <main className="main-wrapper">{props.children}</main>
