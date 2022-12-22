@@ -21,7 +21,7 @@ export default function HomePageImage({ image }) {
         src={urlFor(homepageImage).width(1500).quality(100).url()}
         className={styles.image}
         layout="fill"
-        alt="Fergus Haywood Homepage Image"
+        alt="Fergus Haywood Homepage Gif Image"
         placeholder="blur"
         blurDataURL={urlFor(homepageImage).url()}
       />
