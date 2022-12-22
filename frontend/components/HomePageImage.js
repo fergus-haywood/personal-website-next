@@ -4,7 +4,6 @@ import Image from 'next/image'
 
 export default function HomePageImage({ image }) {
   const homepageImage = image.result[0][0].image
-  console.log(homepageImage)
 
   function urlFor(source) {
     return imgBuilder.image(source)
@@ -17,14 +16,16 @@ export default function HomePageImage({ image }) {
 
   return (
     <div className={styles.wrapper}>
-      <Image
-        src={urlFor(homepageImage).width(1500).quality(100).url()}
-        className={styles.image}
-        layout="fill"
-        alt="Fergus Haywood Homepage Gif Image"
-        placeholder="blur"
-        blurDataURL={urlFor(homepageImage).url()}
-      />
+      {homepageImage && (
+        <Image
+          src={urlFor(homepageImage).width(1500).url()}
+          className={styles.image}
+          layout="fill"
+          alt="Fergus Haywood Homepage Gif Image"
+          placeholder="blur"
+          blurDataURL={urlFor(homepageImage).url()}
+        />
+      )}
     </div>
   )
 }
