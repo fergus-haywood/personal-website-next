@@ -5,6 +5,10 @@
   height: fit-content;
 }
 
+.aboutContent p { 
+  margin-bottom: 20px;
+}
+
 @media all and (max-width: 750px ) { 
   .aboutContent { 
     grid-column: 1 / span 10;
