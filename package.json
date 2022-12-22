@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@sanity/cli": "^3.0.6"
+    "@sanity/cli": "^3.1.1"
   },
   "dependencies": {
     "eslint-config-next": "^13.0.7",
