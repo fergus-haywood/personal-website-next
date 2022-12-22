@@ -201,8 +201,7 @@ a {
   margin-top: 180px;
   padding-inline: 30px;
   width: 100%;
-  height: auto;
-  min-height: calc( 100vh - 157px)
+  height: fit-content;
 }
 
 .mobile-page-title { 
@@ -216,6 +215,7 @@ a {
   .main-wrapper { 
     margin-top: 90px;
     padding-inline: 15px;
+    min-height: calc( 100vh - 157px)
   }
 
   .navItem { 
