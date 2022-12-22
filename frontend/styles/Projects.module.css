@@ -17,6 +17,10 @@
   top: 180px;
 }
 
+.projectContentInner p:not(:last-child) { 
+  margin-bottom: 20px;
+}
+
 .subNavItem { 
   cursor: pointer;
 }
