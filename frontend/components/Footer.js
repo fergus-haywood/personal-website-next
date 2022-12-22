@@ -1,15 +1,17 @@
 import styles from '../styles/Footer.module.css'
 
+import { useState } from 'react'
+
 export default function Footer() {
-  function toggleTheme(theme) {
+  const [isDarkMode, setIsDarkMode] = useState(false)
+
+  function handleClick() {
+    setIsDarkMode(!isDarkMode)
     const root = document.documentElement
-    if (theme == 'light') {
+    if (isDarkMode) {
       root.style.setProperty('--background-color', 'var(--light-background)')
       root.style.setProperty('--color', '#000000')
-    } else if (theme == 'cream') {
-      root.style.setProperty('--background-color', 'var(--cream-background)')
-      root.style.setProperty('--color', '#000000')
-    } else if (theme == 'dark') {
+    } else {
       root.style.setProperty('--background-color', 'var(--dark-background)')
       root.style.setProperty('--color', '#FFFFFF')
     }
@@ -18,16 +20,8 @@ export default function Footer() {
     <footer className={styles.wrapper}>
       <div className={styles.themePicker}>
         <span
-          className={styles.lightMode}
-          onClick={() => toggleTheme('light')}
-        ></span>
-        <span
-          className={styles.darkMode}
-          onClick={() => toggleTheme('dark')}
-        ></span>
-        <span
-          className={styles.creamMode}
-          onClick={() => toggleTheme('cream')}
+          className={styles.themeToggle}
+          onClick={() => handleClick()}
         ></span>
       </div>
       <div className={styles.footerEmail}>

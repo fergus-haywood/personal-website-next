@@ -36,14 +36,9 @@
   cursor: pointer;
 }
 
-.lightMode {
-  background-color: var(--light-background)
-}
-
-.darkMode { 
-  background-color:var(--dark-background);
-  border: 1px solid var(--color) !important;
-
+.themeToggle {
+  background-color: var(--color);
+  color: var(--background-color);
 }
 
 .creamMode { 
@@ -54,10 +49,8 @@
   .wrapper { 
     position: relative;
     padding-inline: 15px;
+    justify-content: space-between;
     display: flex;
   }
 
-  .themePicker { 
-    display: none;
-  }
 }

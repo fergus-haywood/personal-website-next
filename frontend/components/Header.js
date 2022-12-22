@@ -12,7 +12,6 @@ export default function Header({ props }) {
     document.body.style.backgroundColor = getComputedStyle(
       document.body
     ).getPropertyValue('--background-color')
-
     router.push(href)
   }
 
