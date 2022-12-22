@@ -68,7 +68,7 @@ a {
 
 .active-client,
 .active-client + span {
-  color: white !important;
+  color: var(--background-color) !important;
 }
 .active-project {
   color: var(--accent-color) !important;
