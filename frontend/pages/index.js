@@ -6,7 +6,7 @@ export default function Home(props) {
   return (
     <Layout navigation={props.navigationBody}>
       <About content={props.aboutBody} />
-      <HomePageImage image={} />
+      <HomePageImage image={props.aboutBody} />
     </Layout>
   )
 }
@@ -19,14 +19,6 @@ export async function getServerSideProps() {
   const aboutQuery = encodeURIComponent(`*[ _type == 'about']`)
   const aboutURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${aboutQuery}]`
   const aboutBody = await fetch(aboutURL).then((res) => res.json())
-
-  const clientsQuery = encodeURIComponent(`*[ _type == 'clients']`)
-  const clientURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${clientsQuery}]`
-  const clients = await fetch(clientURL).then((res) => res.json())
-
-  const projectsQuery = encodeURIComponent(`*[ _type == 'projects']`)
-  const projectURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${projectsQuery}]`
-  const projects = await fetch(projectURL).then((res) => res.json())
   return {
     props: {
       navigationBody,
