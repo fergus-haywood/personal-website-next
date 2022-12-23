@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 export default function MyApp(props) {
   const { Component, pageProps } = props
   return (
-    <Layout>
+    <Layout navigation={props.navigationBody}>
       <Component {...pageProps} />
     </Layout>
   )

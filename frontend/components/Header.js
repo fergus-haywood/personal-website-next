@@ -6,22 +6,21 @@ import CurrentTime from '../components/CurrentTime'
 import MobileNavigation from '../components/MobileNavigation'
 
 export default function Header({ content }) {
-  const router = useRouter()
   function handleClick(e) {
     document.body.removeAttribute('style')
     document.body.style.backgroundColor = getComputedStyle(
       document.body
     ).getPropertyValue('--background-color')
-    router.push(href)
+    console.log('triggered')
   }
 
   return (
     <>
       <header className={styles.wrapper}>
         <h1 className={styles.title}>
-          <a onClick={() => handleClick} href="/">
-            Fergus Haywood
-          </a>
+          <Link legacyBehavior href="/">
+            <a onClick={() => handleClick()}>Fergus Haywood</a>
+          </Link>
         </h1>
         <AnnouncementBar />
         <CurrentTime />
