@@ -2,6 +2,7 @@ import styles from '../styles/Clients.module.css'
 import { useState, useEffect } from 'react'
 import Layout from '../components/Layout'
 import imageUrlBuilder from '@sanity/image-url'
+import { Fragment } from 'react'
 
 export default function Clients(props) {
   const [clientContent, setClientContent] = useState({})
@@ -54,52 +55,50 @@ export default function Clients(props) {
 
   return (
     <>
-      <Layout navigation={props.navigationBody}>
-        <div className={styles.clientWrapper}>
-          <div className="mobile-page-title">Clients</div>
-          {clientList.map((client) => {
-            return (
-              <>
-                <div key={client.title} className={styles.clientContainer}>
-                  <a
-                    id={client.title}
-                    className={styles.clientItem}
-                    onClick={(e) => handleClick(e)}
-                  >
-                    {client.title}
-                  </a>
-                  <span className={styles.clientOrigin}>({client.origin})</span>
-                </div>
-              </>
-            )
-          })}
-        </div>
-        <div className={styles.clientContent}>
-          {hasContent && (
-            <>
-              <img
-                src={urlFor(clientContent.mainImage)}
-                className={styles.clientImage}
-              />
-              <div className={styles.clientDisciplines}>
-                {clientContent.disciplines}
+      <div className={styles.clientWrapper}>
+        <div className="mobile-page-title">Clients</div>
+        {clientList.map((client) => {
+          return (
+            <Fragment key={client.id}>
+              <div className={styles.clientContainer}>
+                <a
+                  id={client.title}
+                  className={styles.clientItem}
+                  onClick={(e) => handleClick(e)}
+                >
+                  {client.title}
+                </a>
+                <span className={styles.clientOrigin}>({client.origin})</span>
               </div>
-              <a
-                href={clientContent.link.linkUrl}
-                className="projectLink"
-                target="_blank"
-              >
-                View Client{' '}
-                <img
-                  className={styles.projectArrow}
-                  src="./projectArrow.svg"
-                  width="15"
-                />
-              </a>
-            </>
-          )}
-        </div>
-      </Layout>
+            </Fragment>
+          )
+        })}
+      </div>
+      <div className={styles.clientContent}>
+        {hasContent && (
+          <>
+            <img
+              src={urlFor(clientContent.mainImage)}
+              className={styles.clientImage}
+            />
+            <div className={styles.clientDisciplines}>
+              {clientContent.disciplines}
+            </div>
+            <a
+              href={clientContent.link.linkUrl}
+              className="projectLink"
+              target="_blank"
+            >
+              View Client{' '}
+              <img
+                className={styles.projectArrow}
+                src="./projectArrow.svg"
+                width="15"
+              />
+            </a>
+          </>
+        )}
+      </div>
     </>
   )
 }

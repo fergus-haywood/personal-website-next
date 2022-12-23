@@ -20,7 +20,7 @@ export default function Project(props) {
   })
 
   return (
-    <Layout navigation={props.navigationBody}>
+    <>
       <ProjectList projects={projectList} />
       <MobileProjectSlideshow project={projectContent} />
       <div className={styles.projectContent}>
@@ -70,7 +70,7 @@ export default function Project(props) {
           )
         })}
       </div>
-    </Layout>
+    </>
   )
 }
 

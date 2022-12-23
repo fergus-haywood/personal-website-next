@@ -4,10 +4,10 @@ import HomePageImage from '../components/HomePageImage'
 
 export default function Home(props) {
   return (
-    <Layout navigation={props.navigationBody}>
+    <>
       <About content={props.aboutBody} />
       <HomePageImage image={props.aboutBody} />
-    </Layout>
+    </>
   )
 }
 

@@ -4,8 +4,9 @@ export default function Navigation({ content }) {
   function handleClick() {
     document.body.removeAttribute('style')
   }
-  const mainNav = content.navigation.result[0][0].navItems
-  const socialNav = content.navigation.result[0][1].navItems
+
+  const mainNav = content[0].navItems
+  const socialNav = content[1].navItems
 
   return (
     <>
