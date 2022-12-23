@@ -8,10 +8,6 @@ import MobileNavigation from '../components/MobileNavigation'
 export default function Header({ content }) {
   function handleClick(e) {
     document.body.removeAttribute('style')
-    document.body.style.backgroundColor = getComputedStyle(
-      document.body
-    ).getPropertyValue('--background-color')
-    console.log('triggered')
   }
 
   return (
