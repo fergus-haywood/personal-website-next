@@ -5,7 +5,7 @@ import AnnouncementBar from './AnnouncementBar'
 import CurrentTime from '../components/CurrentTime'
 import MobileNavigation from '../components/MobileNavigation'
 
-export default function Header({ props }) {
+export default function Header({ content }) {
   const router = useRouter()
   function handleClick(e) {
     document.body.removeAttribute('style')
@@ -25,7 +25,7 @@ export default function Header({ props }) {
         </h1>
         <AnnouncementBar />
         <CurrentTime />
-        <MobileNavigation items={props.navigation} />
+        <MobileNavigation items={content} />
       </header>
     </>
   )

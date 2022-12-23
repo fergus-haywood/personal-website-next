@@ -9,7 +9,7 @@ export default function ProjectList({ projects }) {
       <ul>
         {projectList.map((project) => {
           return (
-            <Link href={`/projects/${project.id}`}>
+            <Link key={project.id} href={`/projects/${project.id}`}>
               <li id={project.title} key={project.title} className="navItem">
                 {project.title}
                 <span className={styles.clientOrigin}>({project.origin})</span>

@@ -6,11 +6,7 @@ import Link from 'next/link'
 export default function Projects(props) {
   const projectList = props.projects.result[0]
 
-  return (
-    <Layout navigation={props.navigationBody}>
-      <ProjectList projects={projectList} />
-    </Layout>
-  )
+  return <ProjectList projects={projectList} />
 }
 
 export async function getServerSideProps() {

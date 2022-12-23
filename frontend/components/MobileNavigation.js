@@ -3,8 +3,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 export default function MobileNavigation({ items }) {
-  const mainNav = items.result[0][0].navItems
-  const socialNav = items.result[0][1].navItems
+  const mainNav = items[0].navItems
+  const socialNav = items[1].navItems
 
   const [menuStatus, setMenuStatus] = useState('Menu')
   const [isActive, setActive] = useState(false)
