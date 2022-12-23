@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from './Header'
 import Footer from './Footer'
 import Navigation from './Navigation'
+import { useEffect, useState } from 'react'
 
 export default function Layout(props) {
   return (
@@ -13,8 +14,10 @@ export default function Layout(props) {
           content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0"
         />
       </Head>
-      <Header props={props} />
-      <Navigation content={props} />
+
+      <Navigation content={props.navigation} />
+      <Header content={props.navigation} />
+
       <main className="main-wrapper">{props.children}</main>
       <Footer />
     </>

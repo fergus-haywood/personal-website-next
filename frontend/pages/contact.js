@@ -73,7 +73,7 @@ export default function Contact(props) {
   }
 
   return (
-    <Layout navigation={props.navigationBody}>
+    <>
       <div className="contactWrapper">
         <h4 className="heading">Get in Touch</h4>
         <form onSubmit={handleSubmit} className="form">
@@ -124,7 +124,7 @@ export default function Contact(props) {
           </div>
         </form>
       </div>
-    </Layout>
+    </>
   )
 }
 export async function getServerSideProps() {
