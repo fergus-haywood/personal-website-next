@@ -53,5 +53,6 @@
 
   .clientContent { 
     grid-column: 1 / span 10;
+    margin-top: 20px;
   }
 }
