@@ -16,6 +16,7 @@ export default function MobileNavigation({ items }) {
 
   function handleNavClick() {
     document.body.removeAttribute('style')
+    handleClick()
   }
   return (
     <>
@@ -30,7 +31,7 @@ export default function MobileNavigation({ items }) {
                 id={item.text}
                 key={item.text}
                 className="navItem"
-                onClick={(e) => handleNavClick(e)}
+                onClick={() => handleNavClick()}
               >
                 <Link href={`/${item.navItemUrl.linkUrl}`}>{item.text}</Link>
               </li>
