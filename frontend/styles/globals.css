@@ -29,6 +29,14 @@ a:hover {
 
 @import url("https://use.typekit.net/aij1aqx.css");
 
+
+@media all and (max-width: 750px ) { 
+  html { 
+    max-width: 100vw;
+    
+  }
+}
+
 html,
 body { 
   font-size: 18px !important;
