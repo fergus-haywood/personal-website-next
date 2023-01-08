@@ -7,7 +7,7 @@ export default function MyApp(props) {
   const { Component, pageProps } = props
   return (
     <>
-      <Script
+      {/* <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-32CBED8Z0C"
         strategy="afterInteractive"
@@ -16,7 +16,7 @@ export default function MyApp(props) {
         window.dataLayer = window.dataLayer || []; function gtag()
         {dataLayer.push(arguments)}
         gtag('js', new Date()); gtag('config', 'G-32CBED8Z0C');
-      </Script>
+      </Script> */}
 
       <Layout navigation={props.navigationBody}>
         <Component {...pageProps} />
