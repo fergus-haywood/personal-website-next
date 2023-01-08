@@ -10,6 +10,7 @@ export default function MyApp(props) {
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-32CBED8Z0C"
+        strategy="afterInteractive"
       ></Script>
       <Script>
         window.dataLayer = window.dataLayer || []; function gtag()
