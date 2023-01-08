@@ -16,15 +16,15 @@ export default function Layout(props) {
         />
       </Head>
 
-
-<Script async src="https://www.googletagmanager.com/gtag/js?id=G-32CBED8Z0C"></Script>
-<Script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-32CBED8Z0C');
-</Script>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-32CBED8Z0C"
+      ></Script>
+      <Script>
+        window.dataLayer = window.dataLayer || []; function gtag()
+        {dataLayer.push(arguments)}
+        gtag('js', new Date()); gtag('config', 'G-32CBED8Z0C');
+      </Script>
 
       <Navigation content={props.navigation} />
       <Header content={props.navigation} />
