@@ -1,14 +1,26 @@
 import App from 'next/app'
 import '../styles/globals.css'
 import Layout from '../components/Layout'
-import { useEffect, useState } from 'react'
+import Script from 'next/script'
 
 export default function MyApp(props) {
   const { Component, pageProps } = props
   return (
-    <Layout navigation={props.navigationBody}>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-32CBED8Z0C"
+      ></Script>
+      <Script>
+        window.dataLayer = window.dataLayer || []; function gtag()
+        {dataLayer.push(arguments)}
+        gtag('js', new Date()); gtag('config', 'G-32CBED8Z0C');
+      </Script>
+
+      <Layout navigation={props.navigationBody}>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   )
 }
 
