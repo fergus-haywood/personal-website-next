@@ -1,6 +1,5 @@
 import styles from '../styles/Clients.module.css'
 import { useState, useEffect } from 'react'
-import Layout from '../components/Layout'
 import imageUrlBuilder from '@sanity/image-url'
 import { Fragment } from 'react'
 
@@ -103,7 +102,7 @@ export default function Clients(props) {
   )
 }
 
-export async function getInitialProps() {
+export async function getStaticProps() {
   const navigationQuery = encodeURIComponent(`*[ _type == 'navigation']`)
   const navigationURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${navigationQuery}]`
   const navigationBody = await fetch(navigationURL).then((res) => res.json())

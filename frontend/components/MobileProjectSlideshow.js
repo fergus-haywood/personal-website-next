@@ -29,7 +29,7 @@ export default function MobileProjectSlideshow({ project }) {
         pagination={{ clickable: true }}
       >
         {slideImages.map((slide, index) => (
-          <SwiperSlide>
+          <SwiperSlide key={index}>
             <img
               src={urlFor(slide.image).width(700).quality(100)}
               className={`slide-image ${styles.projectImage}`}
