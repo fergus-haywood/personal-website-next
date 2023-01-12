@@ -45,7 +45,7 @@
   background-color: var(--cream-background);
 }
 
-@media all and (max-width: 750px ) { 
+@media all and (max-width: 990px ) { 
   .wrapper { 
     position: relative;
     padding-inline: 15px;

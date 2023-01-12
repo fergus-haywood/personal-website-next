@@ -6,7 +6,7 @@ grid-column: 4 / span 2;
   text-transform: uppercase;
 }
 
-@media all and (max-width: 750px ) { 
+@media all and (max-width: 990px ) { 
   .wrapper { 
     display: none;
   }

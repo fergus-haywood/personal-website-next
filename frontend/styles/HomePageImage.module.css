@@ -9,7 +9,7 @@ grid-column: 7 / span 4;
     height: unset !important
    }
 
-   @media all and (max-width: 750px ) { 
+   @media all and (max-width: 990px ) { 
     .wrapper { 
       grid-column: 1 / span 10;
     }
