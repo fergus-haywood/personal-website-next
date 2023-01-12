@@ -3,6 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Navigation from './Navigation'
 
+const content = await fetchData()
 export default function Layout(props) {
   return (
     <>
@@ -21,11 +22,19 @@ export default function Layout(props) {
         />
       </Head>
 
-      <Navigation content={props.navigation} />
-      <Header content={props.navigation} />
+      <Navigation content={content} />
+      <Header content={content} />
 
       <main className="main-wrapper">{props.children}</main>
       <Footer />
     </>
   )
+}
+
+export async function fetchData() {
+  const navigationQuery = encodeURIComponent(`*[ _type == 'navigation']`)
+  const navigationURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${navigationQuery}]`
+  const navigationBody = await fetch(navigationURL).then((res) => res.json())
+
+  return navigationBody
 }
