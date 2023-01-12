@@ -30,7 +30,7 @@ height: auto;
   opacity: 1; 
 }
 
-@media all and (max-width: 768px ) { 
+@media all and (max-width: 990px ) { 
   .wrapper { 
     display: none;
   }

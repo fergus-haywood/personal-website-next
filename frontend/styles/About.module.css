@@ -9,7 +9,7 @@
   margin-bottom: 20px;
 }
 
-@media all and (max-width: 750px ) { 
+@media all and (max-width: 990px ) { 
   .aboutContent { 
     grid-column: 1 / span 10;
   }

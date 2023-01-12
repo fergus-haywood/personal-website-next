@@ -19,7 +19,7 @@
   grid-column: 4 / span 1;
 }
 
-@media all and (max-width: 768px ) { 
+@media all and (max-width: 990px ) { 
   .menuButton { 
     display: block;
   }

@@ -1,4 +1,3 @@
-import Layout from '../components/Layout'
 import About from '../components/About'
 import HomePageImage from '../components/HomePageImage'
 
