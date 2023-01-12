@@ -30,7 +30,7 @@ a:hover {
 @import url("https://use.typekit.net/aij1aqx.css");
 
 
-@media all and (max-width: 750px ) { 
+@media all and (max-width: 990px ) { 
   html { 
     max-width: 100vw;
     
@@ -216,10 +216,10 @@ a {
   display: none;
   margin-bottom: 30px;
   text-decoration: underline;
-  width: 750px;
+  width: 990px;
 }
 
-@media all and (max-width: 750px ) { 
+@media all and (max-width: 990px ) { 
   .main-wrapper { 
     margin-bottom: 30px;
     margin-top: 90px;
@@ -264,7 +264,7 @@ a {
   text-align: center;
 }
 
-@media all and ( min-width: 750px ) {
+@media all and ( min-width: 990px ) {
   .mobile-project-slideshow { 
     display: none;
   }
@@ -283,4 +283,14 @@ a {
 
 .swiper-pagination-bullet-active {
   background-color: #000 !important;
+}
+
+/* nProgress Styling */
+
+#nprogress .bar {
+  background: var(--color) !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--color), 0 0 5px var(--color) !important;
 }
