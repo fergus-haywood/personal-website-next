@@ -3,11 +3,11 @@
   "/api/contact": "pages/api/contact.js",
   "/api/hello": "pages/api/hello.js",
   "/_error": "pages/_error.js",
-  "/": "pages/index.js",
-  "/projects/[slug]": "pages/projects/[slug].js",
   "/contact": "pages/contact.js",
+  "/projects/[slug]": "pages/projects/[slug].js",
   "/projects": "pages/projects.js",
   "/clients": "pages/clients.js",
+  "/": "pages/index.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html"
 }
