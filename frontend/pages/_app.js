@@ -3,23 +3,8 @@ import Layout from '../components/Layout'
 import Script from 'next/script'
 import { useState, useEffect, use } from 'react'
 import Router from 'next/router'
-import nProgress from 'nprogress'
 
 export default function MyApp({ Component, pageProps }) {
-  nProgress.configure({ showSpinner: false })
-
-  useEffect(() => {
-    Router.events.on('routeChangeStart', (url) => {
-      nProgress.start()
-    })
-    Router.events.on('routeChangeComplete', (url) => {
-      nProgress.done(false)
-    })
-
-    Router.events.on('routeChangeError', (url) => {
-      nProgress.done(false)
-    })
-  }, [Router])
   return (
     <>
       <Script

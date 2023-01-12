@@ -24,8 +24,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1853);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(808);
-/* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_6__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_components_Layout__WEBPACK_IMPORTED_MODULE_2__]);
 _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
@@ -34,24 +32,7 @@ _components_Layout__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies_
 
 
 
-
 function MyApp({ Component , pageProps  }) {
-    nprogress__WEBPACK_IMPORTED_MODULE_6___default().configure({
-        showSpinner: false
-    });
-    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
-        next_router__WEBPACK_IMPORTED_MODULE_5___default().events.on("routeChangeStart", (url)=>{
-            nprogress__WEBPACK_IMPORTED_MODULE_6___default().start();
-        });
-        next_router__WEBPACK_IMPORTED_MODULE_5___default().events.on("routeChangeComplete", (url)=>{
-            nprogress__WEBPACK_IMPORTED_MODULE_6___default().done(false);
-        });
-        next_router__WEBPACK_IMPORTED_MODULE_5___default().events.on("routeChangeError", (url)=>{
-            nprogress__WEBPACK_IMPORTED_MODULE_6___default().done(false);
-        });
-    }, [
-        (next_router__WEBPACK_IMPORTED_MODULE_5___default())
-    ]);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_script__WEBPACK_IMPORTED_MODULE_3___default()), {
@@ -327,14 +308,6 @@ module.exports = require("next/head");
 
 "use strict";
 module.exports = require("next/router");
-
-/***/ }),
-
-/***/ 808:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("nprogress");
 
 /***/ }),
 
