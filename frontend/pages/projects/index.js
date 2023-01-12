@@ -9,7 +9,7 @@ export default function Projects(props) {
   return <ProjectList projects={projectList} />
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const navigationQuery = encodeURIComponent(`*[ _type == 'navigation']`)
   const navigationURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${navigationQuery}]`
   const navigationBody = await fetch(navigationURL).then((res) => res.json())

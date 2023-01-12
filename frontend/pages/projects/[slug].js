@@ -5,6 +5,7 @@ import styles from '../../styles/Projects.module.css'
 import imageUrlBuilder from '@sanity/image-url'
 import BlockContent from '@sanity/block-content-to-react'
 import Image from 'next/image'
+import { Fragment } from 'react'
 
 export default function Project(props) {
   const projectContent = props.project.result[0][0]
@@ -34,7 +35,7 @@ export default function Project(props) {
           <div className={styles.projectDisciplines}>
             {projectContent.projectDisciplines.map((discipline) => {
               return (
-                <span className={styles.projectDisciplineItem}>
+                <span key={discipline} className={styles.projectDisciplineItem}>
                   {discipline.text}
                 </span>
               )
@@ -57,16 +58,18 @@ export default function Project(props) {
       <div className={styles.projectImages}>
         {projectContent.projectImages.map((image, i) => {
           return (
-            <div className={styles.imageContainer}>
-              <Image
-                key={i}
-                src={urlFor(image.image).width(1500).quality(100).url()}
-                className={styles.projectImage}
-                layout="fill"
-                placeholder="blur"
-                blurDataURL={urlFor(image.image).width(1500).url()}
-              />
-            </div>
+            <Fragment key={i}>
+              <div className={styles.imageContainer}>
+                <Image
+                  src={urlFor(image.image).width(1500).quality(100).url()}
+                  className={styles.projectImage}
+                  layout="fill"
+                  placeholder="blur"
+                  blurDataURL={urlFor(image.image).width(1500).url()}
+                  alt={projectContent.title}
+                />
+              </div>
+            </Fragment>
           )
         })}
       </div>
@@ -74,40 +77,37 @@ export default function Project(props) {
   )
 }
 
-export async function getServerSideProps(pageContext) {
-  const pageSlug = pageContext.query.slug
-
-  if (!pageSlug) {
-    return {
-      notFound: true,
-    }
-  }
-
-  const navigationQuery = encodeURIComponent(`*[ _type == 'navigation']`)
-  const navigationURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${navigationQuery}]`
-  const navigationBody = await fetch(navigationURL).then((res) => res.json())
-
-  const projectQuery = encodeURIComponent(
-    `*[ _type == 'projects' && id == '${pageSlug}']`
-  )
-  const projectURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${projectQuery}]`
-  const project = await fetch(projectURL).then((res) => res.json())
-
+export async function getStaticPaths() {
   const projectsQuery = encodeURIComponent(`*[ _type == 'projects' ]`)
   const projectsURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${projectsQuery}]`
   const projects = await fetch(projectsURL).then((res) => res.json())
 
-  if (!project) {
-    return {
-      notFound: true,
-    }
-  } else {
-    return {
-      props: {
-        project,
-        projects,
-        navigationBody,
-      },
-    }
+  const paths = projects.result[0].map((project) => ({
+    params: { slug: project.id },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export async function getStaticProps(context) {
+  const projectsQuery = encodeURIComponent(`*[ _type == 'projects' ]`)
+  const projectsURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${projectsQuery}]`
+  const projects = await fetch(projectsURL).then((res) => res.json())
+
+  const { slug = '' } = context.params
+  const projectQuery = encodeURIComponent(
+    `*[ _type == 'projects' && id == '${slug}']`
+  )
+  const projectURL = `https://36om7i3d.api.sanity.io/v1/data/query/production?query=[${projectQuery}]`
+  const project = await fetch(projectURL).then((res) => res.json())
+
+  return {
+    props: {
+      project,
+      projects,
+    },
   }
 }
