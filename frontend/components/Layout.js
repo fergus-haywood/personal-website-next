@@ -13,15 +13,18 @@ export default function Layout(props) {
 					name="viewport"
 					content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0"
 				/>
-
 				<Script
 					async
 					src="https://www.googletagmanager.com/gtag/js?id=G-32CBED8Z0C"
 				></Script>
-				<Script>
-					window.dataLayer = window.dataLayer || []; function gtag()
-					{dataLayer.push(arguments)}
-					gtag('js', new Date()); gtag('config', 'G-32CBED8Z0C');
+				<Script id="google-analytics">
+					{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-32CBED8Z0C');
+        `}
 				</Script>
 			</Head>
 			<Header props={props} />
