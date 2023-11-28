@@ -1,12 +1,13 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
+  "/api/contact": "pages/api/contact.js",
   "/api/hello": "pages/api/hello.js",
   "/clients": "pages/clients.js",
-  "/api/contact": "pages/api/contact.js",
-  "/": "pages/index.js",
   "/contact": "pages/contact.js",
-  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/projects": "pages/projects.js",
   "/projects/[slug]": "pages/projects/[slug].js",
-  "/projects": "pages/projects.js"
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
 }
